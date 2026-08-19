@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake // Browser Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Snake home"><span class="brand-mark">S</span><span>SNAKE<span class="accent">//</span>WEB</span></a>
+      <div class="topbar-meta"><span class="edition-tag">ARCADE 01</span><div class="status"><span class="status-dot"></span><span id="statusText">READY TO PLAY</span></div></div>
+    </header>
+
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="intro">
+        <p class="eyebrow">PYTHON PROJECT / BROWSER EDITION</p>
+        <h1 id="pageTitle">Keep the<br><em>line alive.</em></h1>
+        <p class="lede">A clean, quick snake run inspired by the original Pygame project. Each apple adds one segment, up to 100 fruits.</p>
+        <div class="stats-row">
+          <div><span class="stat-label">CURRENT</span><strong id="score">00</strong></div>
+          <div><span class="stat-label">BEST RUN</span><strong id="bestScore">00</strong></div>
+          <div><span class="stat-label">LENGTH</span><strong id="length">03</strong></div>
+          <div><span class="stat-label">LEVEL</span><strong id="level">01</strong></div>
+        </div>
+      </div>
+
+      <div class="game-wrap">
+        <div class="game-heading"><span>RUN_001</span><span class="mono" id="speedLabel">15 FPS</span></div>
+        <div class="board-frame">
+          <canvas id="gameCanvas" width="576" height="576" aria-label="Snake game board"></canvas>
+          <div class="board-overlay" id="overlay">
+            <p class="overlay-kicker" id="overlayKicker">READY WHEN YOU ARE</p>
+            <h2 id="overlayTitle">Start a run</h2>
+            <p id="overlayMessage">Use the arrow keys or WASD to move.</p>
+            <button class="primary-button" id="startButton" type="button">Start game <span>-></span></button>
+          </div>
+        </div>
+        <div class="game-actions">
+          <button class="text-button" id="pauseButton" type="button" disabled><span class="pause-icon">||</span> Pause</button>
+          <button class="text-button reset-button" id="resetButton" type="button">Reset run <span>↗</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="lower-grid" aria-label="Game details">
+      <article class="info-block"><span class="info-number">01</span><div><h3>How to play</h3><p>Guide the head to the apple, then keep the growing body away from the walls and its own path.</p></div></article>
+      <article class="info-block"><span class="info-number">02</span><div><h3>Controls</h3><p><kbd>ARROWS</kbd> or <kbd>WASD</kbd> to steer. Press <kbd>SPACE</kbd> to pause. On mobile, use the pad below the board.</p></div></article>
+      <article class="info-block"><span class="info-number">03</span><div><h3>Built from the original</h3><p>A lightweight web companion for the Python source in this folder. No install or framework required.</p></div></article>
+    </section>
+
+    <div class="touch-pad" aria-label="Touch controls">
+      <span class="pad-label">STEER</span>
+      <button data-direction="up" type="button" aria-label="Move up">&#8593;</button>
+      <button data-direction="left" type="button" aria-label="Move left">&#8592;</button>
+      <button data-direction="down" type="button" aria-label="Move down">&#8595;</button>
+      <button data-direction="right" type="button" aria-label="Move right">&#8594;</button>
+    </div>
+    <footer><span>ORIGINAL GAME BY SURYA PRAKASH REDDY</span><span>RUN IT. GROW IT. REPEAT.</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

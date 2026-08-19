@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c2d">
+  <title>Snake Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="arcade">
+    <header class="nav">
+      <a class="logo" href="index.html"><span class="logo-mark">+</span> SNAKE ARCADE</a>
+      <span class="live-status"><i></i><span id="statusText">READY</span></span>
+    </header>
+
+    <section class="game-layout" aria-labelledby="gameTitle">
+      <div class="copy">
+        <p class="kicker">CABINET 001 / SOLO MODE</p>
+        <h1 id="gameTitle">Chase the<br><span>glow.</span></h1>
+        <p class="description">One board. One life. Grow the longest neon trail without touching the edge or yourself.</p>
+        <div class="score-strip" aria-label="Game statistics">
+          <div><small>SCORE</small><strong id="score">00</strong></div>
+          <div><small>BEST</small><strong id="bestScore">00</strong></div>
+          <div><small>LEVEL</small><strong id="level">01</strong></div>
+        </div>
+      </div>
+
+      <div class="cabinet">
+        <div class="cabinet-top"><span>PLAYER 01</span><span id="speedLabel">11 FPS</span></div>
+        <div class="screen">
+          <canvas id="gameCanvas" width="576" height="576" aria-label="Snake game board"></canvas>
+          <div class="overlay" id="overlay">
+            <span class="overlay-label" id="overlayKicker">INSERT COIN</span>
+            <h2 id="overlayTitle">Ready to play?</h2>
+            <p id="overlayMessage">Use arrows or WASD to steer.</p>
+            <button class="start-button" id="startButton" type="button">Start game <b>↗</b></button>
+          </div>
+        </div>
+        <div class="cabinet-controls">
+          <button class="action-button" id="pauseButton" type="button" disabled>Pause</button>
+          <button class="action-button" id="resetButton" type="button">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-to" aria-label="How to play">
+      <div><span>01</span><h2>Eat the fruit</h2><p>Each fruit adds one segment. Keep growing, one fruit at a time, up to 100.</p></div>
+      <div><span>02</span><h2>Own the grid</h2><p>Turn early. The wall and your trail are the only enemies.</p></div>
+      <div><span>03</span><h2>Beat your best</h2><p>Your top score stays saved in this browser.</p></div>
+    </section>
+
+    <div class="touch-controls" aria-label="Touch controls">
+      <button data-direction="up" aria-label="Move up">↑</button>
+      <button data-direction="left" aria-label="Move left">←</button>
+      <button data-direction="down" aria-label="Move down">↓</button>
+      <button data-direction="right" aria-label="Move right">→</button>
+    </div>
+
+    <footer><span>SNAKE ARCADE / LOCAL EDITION</span><span>BUILT TO PLAY</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
